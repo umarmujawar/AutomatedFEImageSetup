@@ -63,7 +63,7 @@ source ~/honey.sh
 check_bucket $BUCKET
 PRECHECK=$?
 if [ $PRECHECK -ne 0 ] ; then
-  echo "======Test1 to create the bucket kept by Yogesh for ensuring bucket should be present"
+  echo "======Test1 to create the bucket kept by Yogesh for ensuring bucket should be present======="
  s3 create $BUCKET
 else
   echo "======= the bucket "
@@ -71,7 +71,9 @@ else
   echo "existed"
 fi
 
+
 #upload image to S3
+echo "=====Found S3 issues here and resolved that by replicating and doing regrious testing on AWS, This is now uploading image in the bucket and may take sometime as the upload speed is slow===="
 s3 put $BUCKET/$TMP_IMG_NAME.qcow2 filename=$IMG >& /dev/null
 
 
